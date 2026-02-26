@@ -1,0 +1,69 @@
+name: EisenhowerTodo
+options:
+  bundleIdPrefix: com.eisenhower
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "26.0"
+  minimumXcodeGenVersion: "2.40.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+
+targets:
+  EisenhowerTodo:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: EisenhowerTodo
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.eisenhower.todo
+        CODE_SIGN_ENTITLEMENTS: EisenhowerTodo/EisenhowerTodo.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: true
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_CFBundleDisplayName: "Eisenhower"
+    dependencies:
+      - target: EisenhowerWidget
+        embed: true
+        codeSign: true
+    entitlements:
+      path: EisenhowerTodo/EisenhowerTodo.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.eisenhower.todo
+
+  EisenhowerWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: EisenhowerWidget
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.eisenhower.todo.widget
+        CODE_SIGN_ENTITLEMENTS: EisenhowerWidget/EisenhowerWidget.entitlements
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        INFOPLIST_KEY_CFBundleDisplayName: "Eisenhower Widget"
+        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: EisenhowerWidget/EisenhowerWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.eisenhower.todo
