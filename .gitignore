@@ -20,3 +20,8 @@ xcuserdata/
 *.swp
 *~
 .build/
+
+# Tuist managed
+Derived/
+*.xcodeproj
+*.xcworkspace
