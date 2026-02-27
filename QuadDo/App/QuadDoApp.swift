@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct EisenhowerTodoApp: App {
+struct QuadDoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

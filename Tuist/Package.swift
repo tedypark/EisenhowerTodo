@@ -10,6 +10,6 @@ let packageSettings = PackageSettings(
 #endif
 
 let package = Package(
-    name: "EisenhowerTodo",
+    name: "QuadDo",
     dependencies: []
 )

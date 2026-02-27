@@ -1,23 +1,23 @@
 import SwiftUI
 import WidgetKit
 
-struct EisenhowerWidget: Widget {
-    let kind: String = "EisenhowerWidget"
+struct QuadDoWidget: Widget {
+    let kind: String = "QuadDoWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: TodoWidgetProvider()) { entry in
-            EisenhowerWidgetEntryView(entry: entry)
+            QuadDoWidgetEntryView(entry: entry)
                 .containerBackground(for: .widget) {
                     Color(uiColor: .systemBackground)
                 }
         }
-        .configurationDisplayName("Eisenhower Matrix")
+        .configurationDisplayName("QuadDo Matrix")
         .description("View and manage your tasks by priority")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
-private struct EisenhowerWidgetEntryView: View {
+private struct QuadDoWidgetEntryView: View {
     @Environment(\.widgetFamily) private var widgetFamily
     let entry: TodoWidgetEntry
 

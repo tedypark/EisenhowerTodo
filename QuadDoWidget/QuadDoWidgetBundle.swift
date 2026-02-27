@@ -2,8 +2,8 @@ import SwiftUI
 import WidgetKit
 
 @main
-struct EisenhowerWidgetBundle: WidgetBundle {
+struct QuadDoWidgetBundle: WidgetBundle {
     var body: some Widget {
-        EisenhowerWidget()
+        QuadDoWidget()
     }
 }

@@ -19,16 +19,16 @@ let widgetSettings: SettingsDictionary = swiftSettings.merging([
 ])
 
 let project = Project(
-    name: "EisenhowerTodo",
+    name: "QuadDo",
     targets: [
         .target(
-            name: "EisenhowerTodo",
+            name: "QuadDo",
             destinations: .iOS,
             product: .app,
-            bundleId: "com.eisenhower.todo",
+            bundleId: "com.tedypark.quaddo",
             deploymentTargets: .iOS("26.0"),
             infoPlist: .extendingDefault(with: [
-                "CFBundleDisplayName": "Eisenhower",
+                "CFBundleDisplayName": "QuadDo",
                 "UILaunchScreen": [:],
                 "UISupportedInterfaceOrientations": [
                     "UIInterfaceOrientationPortrait",
@@ -37,35 +37,35 @@ let project = Project(
                 ],
             ]),
             sources: [
-                "EisenhowerTodo/**",
+                "QuadDo/**",
                 "Shared/**",
             ],
             resources: [
-                "EisenhowerTodo/Assets.xcassets",
+                "QuadDo/Assets.xcassets",
             ],
-            entitlements: .file(path: "EisenhowerTodo/EisenhowerTodo.entitlements"),
+            entitlements: .file(path: "QuadDo/QuadDo.entitlements"),
             dependencies: [
-                .target(name: "EisenhowerWidget"),
+                .target(name: "QuadDoWidget"),
             ],
             settings: .settings(base: appSettings)
         ),
         .target(
-            name: "EisenhowerWidget",
+            name: "QuadDoWidget",
             destinations: .iOS,
             product: .appExtension,
-            bundleId: "com.eisenhower.todo.widget",
+            bundleId: "com.tedypark.quaddo.widget",
             deploymentTargets: .iOS("26.0"),
             infoPlist: .extendingDefault(with: [
-                "CFBundleDisplayName": "Eisenhower Widget",
+                "CFBundleDisplayName": "QuadDo Widget",
                 "NSExtension": [
                     "NSExtensionPointIdentifier": "com.apple.widgetkit-extension",
                 ],
             ]),
             sources: [
-                "EisenhowerWidget/**",
+                "QuadDoWidget/**",
                 "Shared/**",
             ],
-            entitlements: .file(path: "EisenhowerWidget/EisenhowerWidget.entitlements"),
+            entitlements: .file(path: "QuadDoWidget/QuadDoWidget.entitlements"),
             settings: .settings(base: widgetSettings)
         ),
     ]

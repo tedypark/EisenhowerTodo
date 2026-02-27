@@ -18,7 +18,7 @@ struct MatrixView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Eisenhower")
+            .navigationTitle("QuadDo")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
