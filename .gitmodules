@@ -1,0 +1,3 @@
+[submodule ".claude/ios-standards"]
+	path = .claude/ios-standards
+	url = https://github.com/tedypark/ios-standards.git
